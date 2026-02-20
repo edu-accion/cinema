@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Cine</Title>
+        <script src="miScript.js"></script>
+        <link rel="stylesheet" href="misEstilos.css">
+
+    </head>
+    <body>
+        <h1>CineMatch: TU PELÍCULA IDEAL</h1>
+        <h2>Te recomendamos películas de acuerdo a tu edad<br>¡QUE LAS DISFRUTES!</h2>
+        <h3 id="recomendacion">---</h3>
+        <img id="portada" src="Cinema.jpg" alt="portada"
+        height="500px"
+        align="left"
+        hspace="9%">
+        <p>Ingrese su edad:</p>
+        <input type="number" id="textoEdad" min="0" max="100"><br><br><br>
+        <button onclick="recomendar('comedia')">COMEDIA</button><br><br>
+        <button onclick="recomendar('drama')">DRAMA</button><br><br>
+        <button onclick="recomendar('musical')">MUSICAL</button><br><br>
+        <button onclick="recomendar('crimen')">CRIMEN</button><br><br><br><br><br>
+
+        
+        
+        
+
+
+        <script>
+            let comedia= ["TOY STORY", "SUPERBAD", "¿QUÉ PASÓ AYER?"];
+            let drama=["CÓMO ENTRENAR A TU DRAGÓN", " LAS VENTAJAS DE SER MARGINADO", " EL CLUB DE LOS CINCO"];
+            let musical=["COCO", "HIGH SCHOOL MUSICAL", "LA LA LAND, CHICAGO"];
+            let crimen=["SUPER 8","SUMMER OF '84","SLEEPERS"];
+            let elementoImg= document.getElementById("portada");
+
+            let imgComedia= [
+                "toy.jpg",
+                "superbad.jpg",
+                "Que paso ayer.jpg"
+            ]
+
+            let imgDrama=[
+                "COMO ENTRENAR A TU DRAGON.jpg",
+                "Las-ventajas-de-ser-un-marginado.jpg",
+                "el club de los 5.jpg"
+            ]
+
+            let imgMusical=[
+                "Coco_poster.webp",
+                "High School Musical.jpg",
+                "La La Land, Chicago.jpg"
+            ]
+
+            let imgCrimen=[
+                "Super_8-421797032-large.jpg",
+                "Summer_of_84.png",
+                "1-2-570x538.jpg"
+            ]
+            
+            function recomendar(genero){
+            let elementoEdad= document.getElementById("textoEdad");
+            let edad= elementoEdad.value;
+            let elementoRecomendacion= document.getElementById("recomendacion");
+                switch(genero)
+                {
+                    case "comedia":
+                    if(edad<12){
+                        elementoRecomendacion.textContent= comedia[0];
+                        elementoImg.src= imgComedia[0];
+                    } else if(edad>=12&& edad<18){
+                        elementoRecomendacion.textContent= comedia[1];
+                        elementoImg.src= imgComedia[1];
+                    }
+                    else if(edad>=18){
+                        elementoRecomendacion.textContent= comedia[2];
+                        elementoImg.src= imgComedia[2];
+                    }
+                    break;
+
+                    case "drama":
+                    if(edad<12){
+                        elementoRecomendacion.textContent= drama[0];
+                        elementoImg.src= imgDrama[0];
+                    } else if(edad>=12&& edad<18){
+                        elementoRecomendacion.textContent= drama[1];
+                        elementoImg.src= imgDrama[1];
+                    }
+                    else if(edad>=18){
+                        elementoRecomendacion.textContent= drama[2];
+                        elementoImg.src= imgDrama[2];
+                    }
+                    break;
+
+                    case "musical":
+                    if(edad<12){
+                        elementoRecomendacion.textContent= musical[0];
+                        elementoImg.src= imgMusical[0];
+                    } else if(edad>=12&& edad<18){
+                        elementoRecomendacion.textContent= musical[1];
+                        elementoImg.src= imgMusical[1];
+                    }
+                    else if(edad>=18){
+                        elementoRecomendacion.textContent= musical[2];
+                        elementoImg.src= imgMusical[2];
+                    }
+                    break;
+
+                    case "crimen":
+                    if(edad<12){
+                        elementoRecomendacion.textContent= crimen[0];
+                        elementoImg.src= imgCrimen[0];
+                    } else if(edad>=12&& edad<18){
+                        elementoRecomendacion.textContent= crimen[1];
+                        elementoImg.src= imgCrimen[1];
+                    }
+                    else if(edad>=18){
+                        elementoRecomendacion.textContent= crimen[2];
+                        elementoImg.src= imgCrimen[2];
+                    }
+                    break;
+
+                    
+
+                }
+            }
+
+            
+        </script>
+
+    </body>
+</html>
